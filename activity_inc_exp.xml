@@ -31,12 +31,27 @@
         android:layout_weight="1"
         android:text="날짜"/>
     </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertExpense1"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <Button
-    android:id="@+id/btn_insertEx"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="insert expense"/>
+            <Button
+        android:id="@+id/btn_insertEx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="insert expense"/>
+
+            <Button
+        android:id="@+id/btn_dropEx"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Drop Expense"/>
+    </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -66,11 +81,29 @@
         android:text="날짜"/>
     </LinearLayout>
 
-        <Button
-    android:id="@+id/btn_insertIn"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="insert income"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertIncome1"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+            <Button
+        android:id="@+id/btn_insertIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="insert income"/>
+             
+            <Button
+        android:id="@+id/btn_dropIn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Drop Income"/>
+
+    </LinearLayout>
+
 
         <TextView
     android:id="@+id/ex_result"
@@ -83,29 +116,6 @@
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:hint="income result"/>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:id="@+id/drop_btns"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-            <Button
-        android:id="@+id/btn_dropEx"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Drop Expense"/>
-             
-            <Button
-        android:id="@+id/btn_dropIn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Drop Income"/>
-    </LinearLayout>
-
 
 
 </LinearLayout>
