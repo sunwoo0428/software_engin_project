@@ -104,7 +104,6 @@
 
     </LinearLayout>
 
-
         <TextView
     android:id="@+id/ex_result"
     android:layout_width="match_parent"
@@ -116,6 +115,12 @@
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:hint="income result"/>
+
+        <Button
+    android:id="@+id/btn_category"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="카테고리"/>
 
 
 </LinearLayout>
