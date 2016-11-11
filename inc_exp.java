@@ -2,6 +2,7 @@ package com.example.sunwo.money_book;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ public class inc_exp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inc_exp);
 
+        final Intent intent;
+
 
         final DBExpense dbExpense = new DBExpense(getApplicationContext(), "money_ex.db", null, 1);
         final DBIncome dbIncome = new DBIncome(getApplicationContext(), "money_in.db", null, 1);
@@ -43,7 +46,7 @@ public class inc_exp extends AppCompatActivity {
         final TextView exResult = (TextView) findViewById(R.id.ex_result);
         final TextView inResult = (TextView) findViewById(R.id.in_result);
 
-        Button exDate = (Button)findViewById(R.id.btn_insertExDate);
+        Button exDate = (Button) findViewById(R.id.btn_insertExDate);
         exDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +54,7 @@ public class inc_exp extends AppCompatActivity {
             }
         });
 
-        Button inDate = (Button)findViewById(R.id.btn_insertInDate);
+        Button inDate = (Button) findViewById(R.id.btn_insertInDate);
         inDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,9 +69,9 @@ public class inc_exp extends AppCompatActivity {
                 // insert into 테이블명 values (값, 값, 값...);
                 String expense = etExpense.getText().toString();
                 String category = etExCategory.getText().toString();
-                dbExpense.insert("insert into MONEY_EX values(null, "+expense+", '"+category+"',"+exYear+","+exMonth+","+exDay+");");
+                dbExpense.insert("insert into MONEY_EX values(null, " + expense + ", '" + category + "'," + exYear + "," + exMonth + "," + exDay + ");");
 
-                exResult.setText( dbExpense.PrintData() );
+                exResult.setText(dbExpense.PrintData());
             }
         });
 
@@ -79,9 +82,9 @@ public class inc_exp extends AppCompatActivity {
                 // insert into 테이블명 values (값, 값, 값...);
                 String income = etIncome.getText().toString();
                 String category = etInCategory.getText().toString();
-                dbIncome.insert("insert into MONEY_IN values(null, " + income + ", '" + category + "',"+exYear+","+exMonth+","+exDay+");");
+                dbIncome.insert("insert into MONEY_IN values(null, " + income + ", '" + category + "'," + exYear + "," + exMonth + "," + exDay + ");");
 
-                inResult.setText( dbIncome.PrintData() );
+                inResult.setText(dbIncome.PrintData());
             }
         });
 
@@ -106,7 +109,22 @@ public class inc_exp extends AppCompatActivity {
             }
         });
 
-    }
+/*        Button btnCategory = (Button)findViewById(R.id.btn_category);
+        btnCategory.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.btn_category:
+                        startActivity(new Intent(this, popup_category.class));
+                        break;
+                }
+            }
+
+        }); */
+
+
+
+}
+
 
     protected Dialog onCreateDialog(int id){
         DatePickerDialog dpd = new DatePickerDialog(inc_exp.this, new DatePickerDialog.OnDateSetListener() {
@@ -120,5 +138,7 @@ public class inc_exp extends AppCompatActivity {
         },2016,11,11);
         return dpd;
             }
+
+
 }
 
